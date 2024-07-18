@@ -1,6 +1,6 @@
 // config/database.js
 
-/*require('dotenv').config();
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 const mongoURI = process.env.MONGODB_URI;
@@ -17,5 +17,5 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-module.exports = mongoose;*/
+module.exports = mongoose;
 
