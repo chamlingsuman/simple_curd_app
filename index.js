@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const Product = require('./models/Product.js');
 const productRoute = require('./routes/productRoute.js');
+const userRoute = require('./routes/userRoute.js');
 const app = express()
 const port = 4000;
 
