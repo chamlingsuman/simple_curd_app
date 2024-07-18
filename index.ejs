@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="english">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Curd App</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+            }
+            .menu {
+                width: 15% !important;
+                background-color: #f4f4f4;
+                padding: 15px;
+                border-right: 1px solid #ddd;
+            }
+            .menu a {
+                display: block;
+                padding: 10px;
+                margin-bottom: 5px;
+                text-decoration: none;
+                color: #333;
+                border-radius: 4px;
+            }
+            .menu a:hover {
+                background-color: #ddd;
+            }
+            .content {
+                width: 85% !important;
+                padding: 20px;
+                flex: 1;
+            }
+            .content h2 {
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+            }
+        </style>
+         <script>
+            function showContent(endpoint) {
+                var endpoints = document.querySelectorAll('.endpoint-content');
+                endpoints.forEach(function(el) {
+                    el.style.display = 'none';
+                });
+                document.getElementById(endpoint).style.display = 'block';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="menu">
+            <h3>Api Endpoints</h3>
+            <a href="javascript:void(0)" onclick="showContent('login')">Login</a>
+            <a href="javascript:void(0)" onclick="showContent('product')">Product</a>
+            <a href="javascript:void(0)" onclick="showContent('user')">User</a>
+        </div>
+        <div class="content">
+            <%- include('components/login') %>
+            <%- include('components/product') %>
+            <%- include('components/user') %>
+        </div>
+    </body>
+</html>
+
