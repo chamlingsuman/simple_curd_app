@@ -12,7 +12,6 @@ const createUser = async(req, res) => {
 
 const getUsers = async(req, res) => {
     try{
-
         const user = await User.find({});
         res.status(200).json(user);
     }catch(error){
@@ -22,6 +21,7 @@ const getUsers = async(req, res) => {
 
 const getUser = async(req, res)=> {
     try{
+        const { id } = req.params;
         const user = await User.findById(id);
         res.status(200).json(user);
     }catch(error){
@@ -31,6 +31,7 @@ const getUser = async(req, res)=> {
 
 const updateUser = async(req, res) => {
     try{
+        const { id } = req.params;
         const user = await User.findByIdAndUpdate(id, req.body);
     }catch(error){
         res.status(500).json({message: error.message});
@@ -39,6 +40,7 @@ const updateUser = async(req, res) => {
 
 const deleteUser = async(req, res) => {
     try{
+        const { id } = req.params;
         const user = await User.findByIdAndDelete(id);
         if(!user){
             return res.status(404).json({message: "User not found"})
