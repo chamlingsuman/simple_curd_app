@@ -6,7 +6,7 @@ const authenticateJWT = require('../middleware/auth');
 const {createUser, getUsers, updateUser, deleteUser, getUser} = require("../controllers/userController.js");
 
 
-router.post('/', authenticateJWT,  createUser);
+router.post('/create', authenticateJWT,  createUser);
 
 router.get('/', authenticateJWT, getUsers);
 

@@ -6,7 +6,7 @@ const { getProducts, getProduct, createProduct, updateProduct, deleteProduct } =
 
 router.get('/', authenticateJWT, getProducts);
 router.get('/:id', authenticateJWT, getProduct);
-router.post('/', authenticateJWT, createProduct);
+router.post('/create', authenticateJWT, createProduct);
 router.put('/:id', authenticateJWT, updateProduct);
 router.delete('/:id', authenticateJWT, deleteProduct);
 
